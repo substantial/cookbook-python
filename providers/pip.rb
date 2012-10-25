@@ -160,7 +160,7 @@ def pip_cmd(nr)
   if (nr.respond_to?("virtualenv") && nr.virtualenv)
     ::File.join(nr.virtualenv,'/bin/pip')
   elsif "#{node['python']['install_method']}".eql?("source")
-    ::File.join("#{node['python']['prefix_dir']}","/bin/pip")
+    ::File.join("#{node['python']['pip']['prefix_dir']}","/bin/pip")
   else
     'pip'
   end
